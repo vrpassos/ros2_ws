@@ -8,10 +8,11 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(fake_ar_publisher REQUIRED)
 
 # The vision_node executable
 add_executable(vision_node src/vision_node.cpp)
-ament_target_dependencies(vision_node rclcpp)
+ament_target_dependencies(vision_node rclcpp fake_ar_publisher)
 
 # Mark executables for installation
 install(TARGETS vision_node
