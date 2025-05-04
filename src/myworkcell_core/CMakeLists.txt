@@ -9,6 +9,14 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 
+# The vision_node executable
+add_executable(vision_node src/vision_node.cpp)
+ament_target_dependencies(vision_node rclcpp)
+
+# Mark executables for installation
+install(TARGETS vision_node
+    DESTINATION lib/${PROJECT_NAME})
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
